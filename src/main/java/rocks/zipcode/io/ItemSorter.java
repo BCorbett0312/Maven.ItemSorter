@@ -19,13 +19,10 @@ public class ItemSorter {
     public Item[] sort(Comparator<Item> comparator) {
         for(int i = 0; i< myList.length;i++){
             for( int j = i; j>0; j--){
-                if(myList[j].compareTo(myList[j-1])<0) {
+                if(comparator.compare(myList[j], myList[j-1])<0){
                     Item temp = myList[j];
                     myList[j] = myList[j-1];
                     myList[j-1] = temp;
-
-
-
                 }
                 else {
                     break;
